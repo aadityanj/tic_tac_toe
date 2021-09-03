@@ -8,7 +8,7 @@
 
 **Screenshot**:
 ![](v2_part1.png)
-![](v2_part2.png)
+![](v2_final.png)
 
 ## Dependencies 
 
