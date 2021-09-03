@@ -4,11 +4,11 @@
 
 **Description**: A Simple Tic Tac Toe game with a command-line interface built in python. To know more about the Game [info](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-**Status**: The Current version of the game enables only two manual players to play in the game [CHANGELOG](changelog.md).
+**Status**: The Current version of the game enabled with bot player [CHANGELOG](changelog.md).
 
 **Screenshot**:
-![](v1_part1.png)
-![](v1_part2.png)
+![](v2_part1.png)
+![](v2_part2.png)
 
 ## Dependencies 
 
