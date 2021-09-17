@@ -2,12 +2,18 @@ from app.utils import is_valid_name
 import math
 from random import choice
 
+
 class BotPlayer:
 
-    def __init__(self, mark) -> None:
+    def __init__(self, mark: str) -> None:
         self.mark = mark
 
-    def set_player_info(self, meta_str) -> None:
+    def set_player_info(self, meta_str: str) -> None:
+        """
+            Ask the name of the player and set it
+            Args:
+                meta_str: Player's turn, Either First player or Second player
+        """
         while True:
             name = input(f'Enter a {meta_str} Name - {self.mark}: ')
             try:
@@ -19,10 +25,16 @@ class BotPlayer:
             except BaseException:
                 print("Given input is invalid")
 
-    def getChoice(self, game_object):
+    def getChoice(self, game_object: object) -> None:
+        """
+            Args:
+                game_object: Context of the game to use for the validation
+            Returns:
+                position: Player's choice for the move
+        """
         depth = len(game_object.get_empty_cells())
-        if depth == 0 or (game_object.is_won("X") \
-            or game_object.is_won("O")):
+        if depth == 0 or (game_object.is_won("X")
+                          or game_object.is_won("O")):
             return
         if depth == 9:
             x = choice([0, 1, 2])
@@ -30,7 +42,7 @@ class BotPlayer:
         else:
             move = self._minimax(game_object.board, depth, game_object, True)
             x, y = move[0], move[1]
-        bots_choice =  (x * 3) + y
+        bots_choice = (x * 3) + y
         bots_choice += 1
         print(f"{self.name}'s choice: {bots_choice}")
         return bots_choice
@@ -42,11 +54,11 @@ class BotPlayer:
             Args:
                 grid: Game board with player occupied marks
                 depth: No of cells available for next move
-                bot: True if it is bot 
+                bot: True if it is bot
             Returns:
                 int: Returns the best choice
         """
-        #best = [row, col, least no]
+        # best = [row, col, least no]
         if bot:
             best = [-1, -1, -math.inf]
         else:
@@ -55,17 +67,18 @@ class BotPlayer:
         if depth == 0 or (game_object.is_won("X") or game_object.is_won("O")):
             score = 0
             if game_object.is_won("X"):
-                score = -1 # indicates chance of loses 
+                score = -1  # indicates chance of loses
             elif game_object.is_won("O"):
-                score = +1 # indicates chance of win
+                score = +1  # indicates chance of win
             return [-1, -1, score]
 
         for cell in game_object.get_empty_cells():
             x, y = cell[0], cell[1]
+            cell_no = board[x][y]
             board[x][y] = "O" if bot else "X"
             player = False if bot else True
             score = self._minimax(board, depth - 1, game_object, player)
-            board[x][y] = " "
+            board[x][y] = cell_no
             score[0], score[1] = x, y
 
             if bot:
@@ -74,5 +87,4 @@ class BotPlayer:
             else:
                 if score[2] < best[2]:
                     best = score
-
         return best
