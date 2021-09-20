@@ -116,7 +116,7 @@ class TicTacToe(Board):
         self.initialize_second_player(option)
         current_turn = "0"
         while True and move < 9 :
-            choice = self.players[current_turn].getChoice(self)
+            choice = self.players[current_turn].get_choice(self)
             self.mark_moves(
                 self.player_marks[current_turn],
                 choice

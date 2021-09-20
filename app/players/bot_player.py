@@ -25,7 +25,7 @@ class BotPlayer:
             except BaseException:
                 print("Given input is invalid")
 
-    def getChoice(self, game_object: object) -> None:
+    def get_choice(self, game_object: object) -> None:
         """
             Args:
                 game_object: Context of the game to use for the validation

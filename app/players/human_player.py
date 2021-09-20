@@ -20,10 +20,10 @@ class HumanPlayer:
                     return True
                 else:
                     print("Invalid Name")
-            except BaseException:
-                print("Given input is invalid")
+            except KeyboardInterrupt:
+                print("Keyboard Interrupted")
 
-    def getChoice(self, game_object: object) -> int:
+    def get_choice(self, game_object: object) -> int:
         """
             Get player's choice
             Args:
