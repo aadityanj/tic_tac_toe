@@ -33,8 +33,8 @@ class BotPlayer:
                 position: Player's choice for the move
         """
         depth = len(game_object.get_empty_cells())
-        if depth == 0 or (game_object.is_won("X")
-                          or game_object.is_won("O")):
+        if depth == 0 or (game_object.is_won(game_object.player_marks["0"])
+                          or game_object.is_won(game_object.player_marks["1"])):
             return
         if depth == 9:
             x = choice([0, 1, 2])
@@ -64,7 +64,8 @@ class BotPlayer:
         else:
             best = [-1, -1, math.inf]
 
-        if depth == 0 or (game_object.is_won("X") or game_object.is_won("O")):
+        if depth == 0 or (game_object.is_won(game_object.player_marks["0"]) 
+                or game_object.is_won(game_object.player_marks["1"])):
             score = 0
             if game_object.is_won("X"):
                 score = -1  # indicates chance of loses

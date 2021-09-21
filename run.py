@@ -1,6 +1,6 @@
 from app.main import TicTacToe
 
-game = TicTacToe()
-game.print_game_info()
-game.print_board_info()
-game.start()
+game = TicTacToe() #Game Initiazation
+game.print_game_info() # Displays Game General Infomration
+game.print_board_info() # Display Board Information
+game.start() # Game STarts

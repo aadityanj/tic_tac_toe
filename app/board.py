@@ -1,10 +1,13 @@
+from app.constants import BOARD_SIZE, BOARD_TOTAL_CELLS, PLAYER_MARKS
+
+
 class Board:
 
     def __init__(self) -> None:
-        self.size = 3
+        self.size = BOARD_SIZE
         self.board = [[1, 2, 3], [4, 5, 6],
                       [7, 8, 9]]  # 3 rows and 3 columns
-        self.total_cells = self.size * 3
+        self.total_cells = BOARD_TOTAL_CELLS
 
     def print_board_info(self) -> None:
         """
@@ -71,7 +74,7 @@ class Board:
                 choice: Choice ie Cell no entered by the user
         """
         position = choice - 1
-        if self.board[position // 3][position % 3] not in ["X", "O"]:
+        if self.board[position // 3][position % 3] not in [PLAYER_MARKS["0"], PLAYER_MARKS["1"]]:
             return choice
 
     def get_empty_cells(self) -> list:
@@ -82,7 +85,7 @@ class Board:
         """
         cells = []
         for x, row in enumerate(self.board):
-            for y, cell in enumerate(row):
-                if cell not in ["X", "O"]:
+            for y, cell_value in enumerate(row):
+                if cell_value not in [PLAYER_MARKS["0"], PLAYER_MARKS["1"]]:
                     cells.append([x, y])
         return cells

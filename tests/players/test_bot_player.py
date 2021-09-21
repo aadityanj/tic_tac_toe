@@ -1,7 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from app.players.bot_player import BotPlayer
-import io
 from app.main import TicTacToe
 
 
@@ -50,7 +49,7 @@ class TestBotPlayer(unittest.TestCase):
     @patch("builtins.print")
     def test_3_get_choice(self, mock_print):
         """
-            Verify get_choice returns the right cells from the board
+            Verify get_choice returns the right cell no from the board
         """
         self.player.name = "Bot"
         mock_game_obj = self.mock_game_obj
@@ -110,7 +109,7 @@ class TestMiniMaxAlgn(unittest.TestCase):
 
     def test_2_mini_max(self):
         """
-            Verify the algorithm wins the game when it there is an option
+            Verify the algorithm wins the game when it there is an opportunity
         """
         mock_game_obj = self.mock_game_obj
         mock_game_obj.mark_moves("O", 1)

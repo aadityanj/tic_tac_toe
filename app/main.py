@@ -1,3 +1,4 @@
+from app.constants import BOT, GAME_INFO, HUMAN, PLAYER_MARKS
 from app.players.bot_player import BotPlayer
 from app.players.human_player import HumanPlayer
 from .board import Board
@@ -6,22 +7,14 @@ from .board import Board
 class TicTacToe(Board):
     def __init__(self) -> None:
         super().__init__()
-        self.player_marks = {
-            "0": "X",
-            "1": "O"
-        }
+        self.player_marks = PLAYER_MARKS
         self.players = {}
 
     def print_game_info(self) -> None:
         """
             Print Basic information of the game and it's input requirement
         """
-        print("Welcome to the tic tac toe game")
-        print("--------------------------------")
-        print("Movement of Player1 will be shown as X in the board")
-        print("Movement of Player2 will be shown as O in the board")
-        print("Note- Input will be considered invalid if the input value is not between 1 to 9")
-        print("Enter ctrl + c key to quit the game")
+        print(GAME_INFO)
 
     def get_opponent_option(self) -> None:
         """
@@ -31,12 +24,11 @@ class TicTacToe(Board):
             is_bot = input("Play with bot ? (yes or no): ")
             try:
                 if is_bot == "yes":
-                    return "bot"
+                    return BOT
                 elif is_bot == "no":
-                    return "human"
+                    return HUMAN
                 else:
                     raise Exception("Invalid Input")
-                break
             except BaseException:
                 print("Invalid Input")
 
@@ -82,9 +74,9 @@ class TicTacToe(Board):
                 opponent_player: Should be either bot or human
                 player: players of the game
         """
-        if (opponent_player != "bot"):
+        if (opponent_player != BOT):
             print(f"Congratulations! {player.name} won the game.")
-        elif (opponent_player == "bot" and player.mark == "O"):
+        elif (opponent_player == BOT and player.mark == self.player_marks["1"]):
             print(f"Oops! {self.players['0'].name} loose the game.")
             print("Best of luck, Next Time!!")
 
@@ -99,7 +91,7 @@ class TicTacToe(Board):
             option: Second player's option, either bot or human
         Returns:
         """
-        if option is "bot":
+        if option is BOT:
             self.players["1"] = BotPlayer(self.player_marks["1"])
             self.players["1"].set_player_info("Bot Player")
         else:
