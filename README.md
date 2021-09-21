@@ -4,7 +4,7 @@
 
 **Status**:  Current Version has all basic functionalities of the game with a fixed board size. To know about the version [CHANGELOG](changelog.md)
 
-**Test Coverage**: 81% of the  total code has been covered in the test  
+**Test Coverage**: 98% of the  total code has been covered in the test  
 
 ## Dependencies
 - Python - 3.8.5
