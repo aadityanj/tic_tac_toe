@@ -20,7 +20,7 @@ Version
 ### Added
 - Code Refactored
 - Fixed Linters
-- Bug fixes on game movement
+- Bug fixes on the game movement
 - Improved Game board display
-- Enabled UnitTests for all the class
+- Enabled UnitTests for all the classes
 - Improved Version of documents
