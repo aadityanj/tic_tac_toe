@@ -1,9 +1,11 @@
 # Tic Tac Toe
-**Description**: TicTacToe Game built with command-line interface  and written in Python. To know more about the game rules and other [info](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-**Status**:  Current Version has all basic functionalities of the game with fixed board size. To know about the version [CHANGELOG](changelog.md)
+**Description**: TicTacToe Game built with a command-line interface  and written in Python. To know more about the game rules and other [info](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-**Test Coverage**: 98% of the whole code has been covered in the test  
+**Status**:  Current Version has all basic functionalities of the game with a fixed board size. To know about the version [CHANGELOG](changelog.md)
+
+**Test Coverage**: 81% of the  total code has been covered in the test  
+
 ## Dependencies
 - Python - 3.8.5
 - Coverage - 5.5
@@ -22,20 +24,20 @@ $ python3 run_test.py
 ```
 ##### How to play the Game
 ```
-1. Game starts in terminal with showing general game information
-2. Type 'yes or no` as the game asks for an option to play with bot or human player
-3. Enter Name for the First player
-4. Enter Name for the Second player
-5. Game starts here and First turns be given for the First player
+1. Game starts in the terminal with showing general game information
+2. Type 'yes or no` as the game asks for an option to play with a bot or human player
+3. Enter the Name of the First player
+4. Enter the Name of the Second player
+5. Game starts here and the First turns to be given for the First player
 6. Enter Valid Choice to make your move in the game board
-7. In Case of bot option, Once the first player enter the choice, bot choice will be made instantly
-8. Until the game over, turns will keep rotating to both the user
+7. Incase of the bot option, Once the first player enters the choice, the bot choice will be made instantly
+8. Until the game is over, turns will keep rotating to both the user
 9. Game Ends with 'Game Ties'  or 'Any player wins'
 ```
 ### Algorithm
-- MiniMax Algorithm has been used to evaluvate best moves for the Bot player. To read [more](https://en.wikipedia.org/wiki/Minimax) about the algorithm
+- MiniMax Algorithm has been used to evaluate the best moves for the Bot player. To read [more](https://en.wikipedia.org/wiki/Minimax) about the algorithm
 ### Test Coverage
-Type the following commands on your terminal to generate test coverage report
+Type the following commands on your terminal to generate the test coverage report
 ```
 $ coverage run run_test.py && coverage report
 ```
@@ -44,7 +46,7 @@ $ coverage run run_test.py && coverage report
 - Setup Dynamic Board size instead of sticking to 9 cells
 - Provide Clues for Human player's to make a right move
 - Increase more test cases to coverup all the logics
-- Provice option to play bot first
+- Provide option to play bot first
 ### Coverage Report
 ```
 Name                                 Stmts   Miss  Cover
