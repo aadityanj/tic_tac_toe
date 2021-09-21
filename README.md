@@ -1,7 +1,9 @@
 # Tic Tac Toe
 **Description**: TicTacToe Game built with command-line interface  and written in Python. To know more about the game rules and other [info](https://en.wikipedia.org/wiki/Tic-tac-toe)
+
 **Status**:  Current Version has all basic functionalities of the game with fixed board size. To know about the version [CHANGELOG](changelog.md)
-**Test Coverage**: 81% of the  total code has been covered in the test  
+
+**Test Coverage**: 98% of the whole code has been covered in the test  
 ## Dependencies
 - Python - 3.8.5
 - Coverage - 5.5
